@@ -1,0 +1,93 @@
+/* Basic styles for the entire page */
+/* 
+  - Remove default margin to make canvas full screen.
+  - Hide scrollbars by setting overflow to hidden.
+  - Use black background to simulate space environment.
+  - Use a clean sans-serif font for UI elements.
+*/
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+/* Styling for the controls panel */
+/* 
+  - Positioned absolutely at top-left of the screen.
+  - Semi-transparent white background for contrast against dark space.
+  - Padding and rounded corners for neatness and usability.
+  - High z-index so controls appear above 3D canvas.
+*/
+#controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+/* Each individual slider container inside controls */
+/* 
+  - Adds spacing between sliders for clarity.
+*/
+.slider-container {
+  margin-bottom: 8px;
+}
+
+/* Label styles for sliders and other controls */
+/* 
+  - Smaller font size to keep controls compact and readable.
+*/
+label {
+  font-size: 12px;
+}
+
+/* Responsive styles for smaller screens */
+/* 
+  - Make controls panel stretch almost full width for better accessibility on mobile.
+  - Center controls horizontally using transform.
+  - Reduce padding and slightly increase font size for easier touch interaction.
+  - Allow horizontal scrolling of controls if they overflow the width.
+  - Make sliders inline-block so they line up horizontally on small screens.
+*/
+@media (max-width: 600px) {
+  #controls {
+    width: calc(100vw - 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .slider-container {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+/* Tooltip styling */
+/* 
+  - Positioned absolutely to follow mouse cursor or UI elements.
+  - Small padding and rounded corners for neat appearance.
+  - White background and black text for high contrast.
+  - font-size small for unobtrusive info display.
+  - pointer-events none so tooltip does not interfere with mouse interactions.
+  - initially hidden (display:none) and shown dynamically by JS when needed.
+  - high z-index so tooltip appears above other UI elements.
+*/
+.tooltip {
+  position: absolute;
+  padding: 4px 8px;
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  display: none;
+  z-index: 2;
+}

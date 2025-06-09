@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!--
+    Ensure UTF-8 encoding for consistent text display across browsers and languages.
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <!--
+    Responsive design meta tag:
+    - sets viewport width to device width
+    - disables zooming to preserve layout and UI consistency on mobile devices
+  -->
+
+  <title>3D Solar System Fly-In Planets</title>
+  <!--
+    Title of the web application.
+    Displays in browser tab and helps SEO.
+  -->
+
+  <link rel="stylesheet" href="styles.css" />
+  <!--
+    Link to external CSS stylesheet.
+    Contains styling rules for the controls panel, tooltips, sliders, and overall page layout.
+  -->
+</head>
+
+<body>
+  <!--
+    Controls panel container:
+    Dynamically populated by JavaScript to add UI elements such as:
+    - Play/Pause button
+    - Theme toggle button (Dark/Light mode)
+    - Reset camera view button
+    - Speed control sliders for each planet
+  -->
+  <div id="controls"></div>
+
+  <!--Importing Three.js library from CDN:
+      Provides the 3D rendering engine used to build and animate the solar system.
+      Version 0.152.2 ensures compatibility with the latest Three.js features. -->
+  <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+
+  <!--
+    Main project script:
+    Contains all the logic to initialize the scene, camera, lighting, starfield background,
+    create planet meshes, handle animations (fly-in and orbit),
+    respond to user interactions, and update UI controls dynamically.
+  -->
+  <script src="script.js"></script>
+</body>
+</html>
